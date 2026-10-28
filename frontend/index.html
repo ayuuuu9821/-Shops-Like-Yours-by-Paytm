@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shops Like Yours |NEXUS </title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">S</span><div><b>Shops Like Yours</b><small>by Paytm</small></div></div>
+    <nav><a class="active" href="#overview">▦ &nbsp; Overview</a><a href="#benchmark">◉ &nbsp; Peer benchmark</a><a href="#advisor">✦ &nbsp; AI business advisor</a></nav>
+    <div class="sidebar-note"><span class="dot"></span> Demo mode<br><small>Using synthetic data</small></div>
+  </aside>
+  <main>
+    <header><div><p class="eyebrow">MERCHANT GROWTH AI</p><h1>Your business, made clearer.</h1><p class="muted">Understand your sales. Learn from similar shops. Take one measurable action.</p></div><div class="avatar">AR</div></header>
+    <section class="filters panel">
+      <label>Shop category<select id="category"><option>Kirana</option><option>Tea Stall</option><option>Salon</option><option>Pharmacy</option></select></label>
+      <label>Area<select id="area"><option>Sector 14</option><option>Sector 15</option><option>Model Town</option></select></label>
+      <label>Your average daily sales (₹)<input id="salesInput" type="number" value="18000" min="0" /></label>
+      <button id="refreshBtn" class="btn primary">Update insights ↗</button>
+    </section>
+    <section id="overview">
+      <div class="section-heading"><div><h2>Sales overview</h2><p class="muted">Illustrative last-30-day merchant cohort</p></div><span class="pill">● Demo data</span></div>
+      <div class="metrics">
+        <article class="metric panel"><span>Total sales in cohort</span><strong id="totalSales">₹—</strong><small>Across demo shops</small></article>
+        <article class="metric panel"><span>Average daily sales</span><strong id="avgSales">₹—</strong><small>Selected cohort</small></article>
+        <article class="metric panel"><span>Transactions</span><strong id="transactions">—</strong><small>Recorded in demo data</small></article>
+        <article class="metric panel"><span>Your position</span><strong id="positionMetric">—</strong><small>Compared with demo peers</small></article>
+      </div>
+      <div class="panel chart-panel"><div class="card-title"><div><h3>Sales trend</h3><p class="muted">Daily cohort sales</p></div><span class="chart-key">● Sales</span></div><canvas id="salesChart" height="100"></canvas></div>
+    </section>
+    <section id="benchmark">
+      <div class="section-heading"><div><h2>Shops like yours</h2><p class="muted">Compare with similar shops in the selected demo cohort.</p></div></div>
+      <div class="benchmark-grid">
+        <article class="panel benchmark-main"><div class="mini-label">YOUR DAILY SALES</div><div class="big-number" id="yourSales">₹18,000</div><div class="compare-line"><span>Demo peer average</span><b id="peerAvg">₹—</b></div><div class="bar-track"><div id="salesBar" class="bar-fill"></div></div><p id="benchmarkText" class="benchmark-text">Loading benchmark…</p></article>
+        <article class="panel insight-card"><div class="insight-icon">✦</div><p class="eyebrow">YOUR BIGGEST OPPORTUNITY</p><h3 id="opportunityTitle">Get a clear next step</h3><p id="opportunityText">Update your sales to see a comparison and practical next action.</p><a href="#advisor" class="text-link">Get your action plan →</a></article>
+      </div>
+    </section>
+    <section id="advisor">
+      <div class="section-heading"><div><h2>AI business advisor</h2><p class="muted">One practical action—not a wall of generic tips.</p></div></div>
+      <div class="advisor-grid">
+        <article class="panel advisor-form">
+          <label>Shop name<input id="shopName" value="My Shop" /></label>
+          <label>Preferred language<select id="language"><option>English</option><option>Hindi</option></select></label>
+          <button class="btn primary full" id="adviceBtn">Generate my action plan ✦</button>
+          <small class="muted">OpenAI advice is used when configured; otherwise recommendations are rule-based.</small>
+        </article>
+        <article class="panel advice-result"><div class="result-label">PERSONALIZED ACTION</div><h3 id="actionTitle">Your next 7-day experiment</h3><p id="actionText">Choose your shop category and update sales to generate a practical recommendation.</p><div class="divider"></div><div class="result-label">ADVERTISING IDEA</div><p id="campaignText">A tailored campaign idea will appear here.</p><div class="divider"></div><div class="result-label">HOW TO MEASURE IT</div><p id="measureText">Track transactions, average bill value, and gross margin for 7 days.</p></article>
+      </div>
+    </section>
+    <footer>Shops Like Yours · NEXUS · Hackathon prototype <span>Not affiliated with or connected to live Paytm systems</span></footer>
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
